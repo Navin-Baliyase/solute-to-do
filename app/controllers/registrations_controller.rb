@@ -10,6 +10,8 @@ class RegistrationsController < Devise::RegistrationsController
 
     build_resource(registration_params)
     resource.save
+    @resource = resource
+    NotificationMailer.notification_mailer(@resource).deliver if resource.valid?
     render_resource(resource)
   end
 

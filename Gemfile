@@ -5,6 +5,8 @@ ruby '2.4.4'
 
 #Added Navin - Authentication using devise json web token
 gem 'devise-jwt'
+#Added Navin - Preview email in the default browser instead of sending it
+gem "letter_opener", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
