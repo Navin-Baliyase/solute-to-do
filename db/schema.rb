@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_150943) do
+ActiveRecord::Schema.define(version: 2019_03_04_154041) do
 
   create_table "blacklists", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2019_03_04_150943) do
   create_table "jwt_blacklist", force: :cascade do |t|
     t.string "jti", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "todolists", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_todolists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

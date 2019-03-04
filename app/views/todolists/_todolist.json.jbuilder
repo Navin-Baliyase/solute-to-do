@@ -1,0 +1,1 @@
+json.extract! todolist, :id, :title, :description

@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   before_validation :downcase_email
   validates :email, uniqueness: true, presence: true
+  has_many :todolists
 
   private
 
