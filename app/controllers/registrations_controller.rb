@@ -16,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def show
-    render json: User.all
+    render json: current_user
   end
 
   private

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'welcomes#index'
   resources :todolists, defaults: {format: :json}
+  get 'todolists/list'
+  get 'users/show'
   devise_for :users,
 	path: '',
 	path_names: {

@@ -1,5 +1,5 @@
 class TodolistsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, :only => [:index,:show]
   before_action :set_todolist, only: [:show, :update, :destroy]
 
   # GET /todolists
@@ -9,6 +9,11 @@ class TodolistsController < ApplicationController
 
   # GET /todolists/1
   def show
+  end
+
+  def list
+    @todolists = current_user.todolists.to_a
+    render json: @todolists
   end
 
   # POST /todolists
